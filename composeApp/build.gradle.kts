@@ -51,12 +51,10 @@ kotlin {
     
     sourceSets {
         val desktopMain by getting
-        val wasmJsMain by getting
 
         androidMain.dependencies {
             implementation(compose.preview)
             implementation(libs.androidx.activity.compose)
-//            implementation(project(":shared:pdf"))
         }
         commonMain.dependencies {
             implementation(compose.runtime)
@@ -68,10 +66,6 @@ kotlin {
         }
         desktopMain.dependencies {
             implementation(compose.desktop.currentOs)
-//            implementation(project(":shared:pdf"))
-        }
-        wasmJsMain.dependencies {
-//            api(project(":shared:pdf"))
         }
     }
 }
