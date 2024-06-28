@@ -13,11 +13,20 @@ import org.jetbrains.compose.ui.tooling.preview.Preview
 
 import nct_deck.composeapp.generated.resources.Res
 import nct_deck.composeapp.generated.resources.compose_multiplatform
+import org.koin.compose.KoinApplication
+import org.koin.compose.koinInject
+import pdf.repository.PdfRepository
+import pdf.repository.di.pdfRepositoryModule
 
 @Composable
 @Preview
 fun App() {
+    KoinApplication(application = {
+        modules(pdfRepositoryModule)
+    }) {
+    }
     MaterialTheme {
+        val repository = koinInject<PdfRepository>()
         var showContent by remember { mutableStateOf(false) }
         Column(Modifier.fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally) {
             Button(onClick = { showContent = !showContent }) {
@@ -28,6 +37,7 @@ fun App() {
                 Column(Modifier.fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally) {
                     Image(painterResource(Res.drawable.compose_multiplatform), null)
                     Text("Compose: $greeting")
+                    Text("Repository: ${repository.sayHello()}")
                 }
             }
         }
