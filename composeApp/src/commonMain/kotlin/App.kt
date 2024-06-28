@@ -23,21 +23,25 @@ import pdf.repository.di.pdfRepositoryModule
 fun App() {
     KoinApplication(application = {
         modules(pdfRepositoryModule)
-    }) {
-    }
+    }) {}
     MaterialTheme {
         val repository = koinInject<PdfRepository>()
         var showContent by remember { mutableStateOf(false) }
         Column(Modifier.fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally) {
-            Button(onClick = { showContent = !showContent }) {
+            Button(onClick = {
+                showContent = !showContent
+                println("Repository: ${repository.sayHello()}")
+            }) {
                 Text("Click me!")
             }
             AnimatedVisibility(showContent) {
                 val greeting = remember { Greeting().greet() }
-                Column(Modifier.fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally) {
+                Column(
+                    Modifier.fillMaxWidth(),
+                    horizontalAlignment = Alignment.CenterHorizontally
+                ) {
                     Image(painterResource(Res.drawable.compose_multiplatform), null)
                     Text("Compose: $greeting")
-                    Text("Repository: ${repository.sayHello()}")
                 }
             }
         }
