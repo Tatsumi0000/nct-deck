@@ -36,6 +36,11 @@ kotlin {
 
     sourceSets {
         commonMain.dependencies {
+            implementation(compose.runtime)
+
+            implementation(project.dependencies.platform(libs.koin.bom))
+            implementation(libs.koin.core)
+            implementation(libs.koin.compose)
         }
     }
 }
