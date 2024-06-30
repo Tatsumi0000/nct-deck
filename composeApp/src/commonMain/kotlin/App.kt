@@ -13,24 +13,27 @@ import org.jetbrains.compose.ui.tooling.preview.Preview
 
 import nct_deck.composeapp.generated.resources.Res
 import nct_deck.composeapp.generated.resources.compose_multiplatform
+import nct_deck.shared.pdf.repository.PdfRepository
+import nct_deck.shared.pdf.repository.di.pdfRepositoryModule
+import nct_deck.shared.pdf.usecase.PdfUseCase
+import nct_deck.shared.pdf.usecase.di.pdfUseCaseModule
+
 import org.koin.compose.KoinApplication
 import org.koin.compose.koinInject
-import pdf.repository.PdfRepository
-import pdf.repository.di.pdfRepositoryModule
 
 @Composable
 @Preview
 fun App() {
     KoinApplication(application = {
-        modules(pdfRepositoryModule)
+        modules(pdfRepositoryModule, pdfUseCaseModule)
     }) {}
     MaterialTheme {
-        val repository = koinInject<PdfRepository>()
+        val useCase = koinInject<PdfUseCase>()
         var showContent by remember { mutableStateOf(false) }
         Column(Modifier.fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally) {
             Button(onClick = {
                 showContent = !showContent
-                println("Repository: ${repository.sayHello()}")
+                println("Repository: ${useCase.sayHello()}")
             }) {
                 Text("Click me!")
             }
