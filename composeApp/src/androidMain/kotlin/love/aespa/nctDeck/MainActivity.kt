@@ -1,4 +1,4 @@
-package love.aespa.nct_deck
+package love.aespa.nctDeck
 
 import App
 import android.os.Bundle
