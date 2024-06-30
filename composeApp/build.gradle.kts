@@ -80,7 +80,7 @@ kotlin {
 }
 
 android {
-    namespace = "love.aespa.nct_deck"
+    namespace = "love.aespa.nctDeck"
     compileSdk = libs.versions.android.compileSdk.get().toInt()
 
     sourceSets["main"].manifest.srcFile("src/androidMain/AndroidManifest.xml")
@@ -88,7 +88,7 @@ android {
     sourceSets["main"].resources.srcDirs("src/commonMain/resources")
 
     defaultConfig {
-        applicationId = "love.aespa.nct_deck"
+        applicationId = "love.aespa.nctDeck"
         minSdk = libs.versions.android.minSdk.get().toInt()
         targetSdk = libs.versions.android.targetSdk.get().toInt()
         versionCode = 1
@@ -119,7 +119,7 @@ compose.desktop {
 
         nativeDistributions {
             targetFormats(TargetFormat.Dmg, TargetFormat.Msi, TargetFormat.Deb)
-            packageName = "love.aespa.nct_deck"
+            packageName = "love.aespa.nctDeck"
             packageVersion = "1.0.0"
         }
     }

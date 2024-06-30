@@ -1,4 +1,4 @@
-package nct_deck.shared.pdf.repository
+package nctDeck.shared.pdf.repository
 
 interface PdfRepository {
     fun sayHello(): String

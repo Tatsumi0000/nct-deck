@@ -46,7 +46,7 @@ iosX64(),
 }
 
 android {
-    namespace = "love.aespa.nct_deck.shared.pdf"
+    namespace = "love.aespa.nctDeck.shared.pdf"
     compileSdk = libs.versions.android.compileSdk.get().toInt()
     defaultConfig {
         minSdk = libs.versions.android.minSdk.get().toInt()

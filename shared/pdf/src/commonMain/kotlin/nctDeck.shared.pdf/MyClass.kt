@@ -1,4 +1,4 @@
-package nct_deck.shared.pdf
+package nctDeck.shared.pdf
 
  public class MyClass {
      public fun sayHello(): String {

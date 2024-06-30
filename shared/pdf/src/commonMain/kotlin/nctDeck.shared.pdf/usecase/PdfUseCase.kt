@@ -1,6 +1,6 @@
-package nct_deck.shared.pdf.usecase
+package nctDeck.shared.pdf.usecase
 
-import nct_deck.shared.pdf.repository.PdfRepository
+import nctDeck.shared.pdf.repository.PdfRepository
 import org.koin.core.component.KoinComponent
 import org.koin.core.component.inject
 

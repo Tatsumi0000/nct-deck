@@ -1,7 +1,7 @@
-package nct_deck.shared.pdf.usecase.di
+package nctDeck.shared.pdf.usecase.di
 
-import nct_deck.shared.pdf.usecase.PdfUseCaseImpl
-import nct_deck.shared.pdf.usecase.PdfUseCase
+import nctDeck.shared.pdf.usecase.PdfUseCaseImpl
+import nctDeck.shared.pdf.usecase.PdfUseCase
 import org.koin.core.module.dsl.singleOf
 import org.koin.dsl.bind
 import org.koin.dsl.module
