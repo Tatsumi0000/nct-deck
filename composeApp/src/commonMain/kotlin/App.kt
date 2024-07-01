@@ -8,11 +8,11 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import nct_deck.composeapp.generated.resources.Res
-import nct_deck.composeapp.generated.resources.compose_multiplatform
 import nctDeck.shared.pdf.repository.di.pdfRepositoryModule
 import nctDeck.shared.pdf.usecase.PdfUseCase
 import nctDeck.shared.pdf.usecase.di.pdfUseCaseModule
+import nct_deck.composeapp.generated.resources.Res
+import nct_deck.composeapp.generated.resources.compose_multiplatform
 import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.ui.tooling.preview.Preview
 import org.koin.compose.KoinApplication
